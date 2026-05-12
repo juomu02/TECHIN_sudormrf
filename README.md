@@ -27,6 +27,10 @@ dotnet ef database update
 ```
 ### Migracijos pridėjimas
 \*Čia pavyzdys. Kuriant naują migraciją reikia pakeisti pavadinimą
+\*leidžiama iš *projekto* root direktorijos
 ```
-dotnet ef migrations add AddTestMigration 
+dotnet ef migrations add AddTestMigration -p MySavings.API/ -s MySavings.Data/
 ```
+
+## Swagger nuoroda (port gali skirtis)
+http://localhost:5141/swagger/index.html
