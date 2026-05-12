@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../MySavings.Data/MySavings.Data.csproj" />
     <ProjectReference Include="../MySavings.Entities/MySavings.Entities.csproj" />
   </ItemGroup>
 
