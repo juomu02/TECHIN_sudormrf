@@ -1,10 +1,11 @@
 using MySavings.Entities;
+using MySavings.Services.Models;
 
 namespace MySavings.Services
 {
     public interface IUserService
     {
-        Task<int> AddAsync(string userName, string email, string password);
+        Task<int> AddAsync(CreateUser createUser);
         Task<User> GetAsync(int userId);
     }
 }

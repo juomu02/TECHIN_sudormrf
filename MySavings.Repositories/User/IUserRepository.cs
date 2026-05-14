@@ -4,7 +4,7 @@ namespace MySavings.Repositories
 {
     public interface IUserRepository
     {
-        Task<int> AddAsync(string userName, string email, string password);
+        Task<int> AddAsync(User user);
         Task<User> GetAsync(int userId);
     }
 }
