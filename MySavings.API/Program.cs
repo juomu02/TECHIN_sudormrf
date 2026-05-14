@@ -32,4 +32,12 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapControllers();
+
+// Auto migrate db
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<MySavingsDbContext>();
+    dbContext.Database.Migrate();
+}
+
 app.Run();

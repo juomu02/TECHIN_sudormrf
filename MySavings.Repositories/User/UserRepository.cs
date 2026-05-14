@@ -11,16 +11,9 @@ namespace MySavings.Repositories
         {
             this.dbContext = dbContext;
         }
-        public async Task<int> AddAsync(string userName, string email, string password)
+        public async Task<int> AddAsync(User user)
         {
-           var user = new User
-            {
-                UserName = userName,
-                Email = email,
-                PasswordHash = password,
-                PasswordSalt = "salt",
-                Iterations = 10000
-            };
+     
             dbContext.Users.Add(user);
             await dbContext.SaveChangesAsync();
             return user.Id;
