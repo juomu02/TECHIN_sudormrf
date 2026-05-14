@@ -20,7 +20,7 @@ namespace MySavings.API.Controllers
             var user = await userService.GetAsync(id);
             if (user == null)
             {
-                return NotFound();
+                return NoContent();
             }
             return Ok(user);
         }
@@ -28,7 +28,7 @@ namespace MySavings.API.Controllers
         public async Task<IActionResult> CreateAsync(CreateUser createUser)
         {
             var userId = await userService.AddAsync(createUser);
-            return Ok(userId);
+            return Created("/",userId);
         }
     }
 }
