@@ -1,9 +1,14 @@
+// import { Route, Routes } from "react-router";
+// import Login from "./pages/Login";
 
 function App() {
 
+
   return (
-    <>
-    test
+    <> 
+      {/* pvz: <Routes>
+        <Route path="/signup" element={<Login/>}/>
+      </Routes> */}
     </>
   )
 }
