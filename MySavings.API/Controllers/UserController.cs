@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using MySavings.Services;
+using MySavings.Services.Models;
 
 namespace MySavings.API.Controllers
 {
@@ -23,10 +24,10 @@ namespace MySavings.API.Controllers
             }
             return Ok(user);
         }
-        [HttpPost("{userName}/{email}/{password}")]
-        public async Task<IActionResult> CreateAsync(string userName, string email, string password)
+        [HttpPost]
+        public async Task<IActionResult> CreateAsync(CreateUser createUser)
         {
-            var userId = await userService.AddAsync(userName, email, password);
+            var userId = await userService.AddAsync(createUser);
             return Ok(userId);
         }
     }
