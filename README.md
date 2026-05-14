@@ -8,7 +8,7 @@ Baigiamasis projektas
 ```
 docker run --name MySavings -e MYSQL_ROOT_PASSWORD=root -d -p 3306:3306 mysql:lts
 ```
-### 2. API rojekto paleidimas
+### 2. API projekto paleidimas
 \*leidžiama iš ./MySavings.API/ direktorijos
 ```
 dotnet run
@@ -32,5 +32,5 @@ dotnet ef database update
 dotnet ef migrations add AddTestMigration -p MySavings.API/ -s MySavings.Data/
 ```
 
-## Swagger nuoroda (port gali skirtis)
+## Swagger nuoroda
 http://localhost:5141/swagger/index.html

@@ -19,9 +19,9 @@ namespace MySavings.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            var user = userService.Get(id);
+            var user = await userService.GetAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -29,9 +29,9 @@ namespace MySavings.API.Controllers
             return Ok(user);
         }
         [HttpPost("{userName}/{email}/{password}")]
-        public IActionResult Post(string userName, string email, string password)
+        public async Task<IActionResult> Post(string userName, string email, string password)
         {
-            var userId = userService.Add(userName, email, password);
+            var userId = await userService.AddAsync(userName, email, password);
             return Ok(userId);
         }
     }

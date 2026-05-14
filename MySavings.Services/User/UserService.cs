@@ -10,14 +10,14 @@ namespace MySavings.Services
         {
             this.userRepository = userRepository;
         }
-        public int Add(string userName, string email, string password)
+        public async Task<int> AddAsync(string userName, string email, string password)
         {
-            return userRepository.Add(userName, email, password);
+            return await userRepository.AddAsync(userName, email, password);
         }
 
-        public User Get(int userId)
+        public async Task<User> GetAsync(int userId)
         {
-            return userRepository.Get(userId);
+            return await userRepository.GetAsync(userId);
         }
     }
 }

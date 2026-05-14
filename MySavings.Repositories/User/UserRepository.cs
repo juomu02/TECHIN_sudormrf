@@ -11,7 +11,7 @@ namespace MySavings.Repositories
         {
             this.dbContext = dbContext;
         }
-        public int Add(string userName, string email, string password)
+        public async Task<int> AddAsync(string userName, string email, string password)
         {
            var user = new User
             {
@@ -22,13 +22,13 @@ namespace MySavings.Repositories
                 Iterations = 10000
             };
             dbContext.Users.Add(user);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
             return user.Id;
         }
 
-        public User Get(int userId)
+        public async Task<User> GetAsync(int userId)
         {
-            return dbContext.Users.Find(userId);
+            return await dbContext.Users.FindAsync(userId);
         }
     }
 }
